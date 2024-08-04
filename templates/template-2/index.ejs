@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Excel-like Table</title>
+    <style>
+      <%=cssContent%>
+    </style>
+  </head>
+  <body>
+    <table class="excel-table">
+      <thead>
+        <tr>
+          <% datasource.headers.forEach(header => { %>
+          <th><%= header %></th>
+          <% }); %>
+        </tr>
+      </thead>
+      <tbody>
+        <% datasource.rows.forEach(row => { %>
+        <tr>
+          <% row.forEach(cell => { %>
+          <td><%= cell %></td>
+          <% }); %>
+        </tr>
+        <% }); %>
+      </tbody>
+    </table>
+  </body>
+</html>
